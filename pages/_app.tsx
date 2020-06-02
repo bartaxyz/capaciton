@@ -1,9 +1,9 @@
-import App, { Container, NextAppContext } from "next/app";
+import App, { Container } from "next/app";
 
 import Page from "../components/Page";
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }: NextAppContext) {
+  static async getInitialProps({ Component, ctx }: any) {
     let pageProps = {};
 
     if (Component.getInitialProps) {
