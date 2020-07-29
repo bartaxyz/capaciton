@@ -4,15 +4,12 @@ import { Generators } from "generators";
 const { Import, Component, Utils } = Generators.Code;
 const { NewLine, Concat } = Utils;
 
-console.log(Concat([
-  Import("react", "React"),
-  '',
-  Component("Button")
-], NewLine()));
-
 export default () => {
   const onDownloadButtonClick = () =>
-    downloadTextFile("component.tsx", "export const Component = () => {}");
+    downloadTextFile(
+      "Button.tsx",
+      Concat([Import("react", "React"), "", Component("Button")], NewLine())
+    );
 
   return (
     <div>
