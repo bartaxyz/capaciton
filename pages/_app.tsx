@@ -1,9 +1,9 @@
-import App, { Container, NextAppContext } from "next/app";
+import App from "next/app";
 
-import Page from "../components/Page";
+import "../ui/ReactSortableTree.css";
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }: NextAppContext) {
+  static async getInitialProps({ Component, ctx }: any) {
     let pageProps = {};
 
     if (Component.getInitialProps) {
@@ -16,13 +16,7 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
 
-    return (
-      <Container>
-        <Page>
-          <Component {...pageProps} />
-        </Page>
-      </Container>
-    );
+    return <Component {...pageProps} />;
   }
 }
 
